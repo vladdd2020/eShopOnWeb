@@ -25,7 +25,7 @@ public class HomePageHealthCheck : IHealthCheck
         var client = new HttpClient();
         var response = await client.GetAsync(myUrl);
         var pageContents = await response.Content.ReadAsStringAsync();
-        if (pageContents.Contains(".NET Black & White Mug"))
+        if (pageContents.Contains(".NET Bot Black Sweatshirt"))
         {
             return HealthCheckResult.Healthy("The check indicates a healthy result.");
         }
