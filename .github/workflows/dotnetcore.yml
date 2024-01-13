@@ -37,7 +37,3 @@ jobs:
         slot-name: 'dev'  # Необов'язково, якщо використовуєте слоти
         package: ./publish      
 
-      
-      - name: logout
-        run: |
-          az logout
