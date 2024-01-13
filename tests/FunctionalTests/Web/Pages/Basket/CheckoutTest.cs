@@ -63,6 +63,6 @@ public class CheckoutTest : IClassFixture<TestApplication>
         var stringCheckOutResponse = await checkOutResponse.Content.ReadAsStringAsync();
 
         Assert.Contains("/Basket/Success", checkOutResponse.RequestMessage!.RequestUri!.ToString());
-        Assert.Contains("Thanks for your Order!", stringCheckOutResponse);
+        Assert.Contains("Дякуємо за замовлення! ))", stringCheckOutResponse);
     }
 }
