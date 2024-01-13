@@ -23,6 +23,6 @@ public class CatalogControllerIndex : IClassFixture<TestApplication>
         var stringResponse = await response.Content.ReadAsStringAsync();
 
         // Assert
-        Assert.Contains(".NET Bot Black Sweatshirt", stringResponse);
+        Assert.Contains("Зарядна станція Bluetti AC200 MAX", stringResponse);
     }
 }
