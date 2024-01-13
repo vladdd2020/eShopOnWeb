@@ -2,13 +2,19 @@ name: eShopOnWeb Build and Test
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  AZURE_WEBAPP_NAME: app-web-mhksjsbvelan6  
+  
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2   
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -16,7 +22,17 @@ jobs:
         include-prerelease: true
 
     - name: Build with dotnet
-      run: dotnet build ./eShopOnWeb.sln --configuration Release
+      run: |
+        dotnet restore ./eShopOnWeb.sln
+        dotnet build ./eShopOnWeb.sln --configuration Release
+        dotnet publish ./src/Web/Web.csproj -c Release -o ./publish
     
     - name: Test with dotnet
       run: dotnet test ./eShopOnWeb.sln --configuration Release
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}  # Ім'я вашого Azure Web App
+        package: ./publish      
+
