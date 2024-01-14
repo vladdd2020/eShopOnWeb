@@ -16,11 +16,11 @@
         <form method="post">
             <article class="esh-basket-titles row">
                 <br />
-                <section class="esh-basket-title col-xs-3">Product</section>
+                <section class="esh-basket-title col-xs-3">Продукт</section>
                 <section class="esh-basket-title col-xs-3 hidden-lg-down"></section>
-                <section class="esh-basket-title col-xs-2">Price</section>
-                <section class="esh-basket-title col-xs-2">Quantity</section>
-                <section class="esh-basket-title col-xs-2">Cost</section>
+                <section class="esh-basket-title col-xs-2">Ціна</section>
+                <section class="esh-basket-title col-xs-2">Кількість</section>
+                <section class="esh-basket-title col-xs-2">Загальна вартість</section>
             </article>
             <div class="esh-catalog-items row">
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -49,7 +49,7 @@
                 <div class="container">
                     <article class="esh-basket-titles esh-basket-titles--clean row">
                         <section class="esh-basket-title col-xs-10"></section>
-                        <section class="esh-basket-title col-xs-2">Total</section>
+                        <section class="esh-basket-title col-xs-2">Усього</section>
                     </article>
 
                     <article class="esh-basket-items row">
@@ -63,15 +63,15 @@
                 </div>
                 <div class="row">
                     <section class="esh-basket-item col-xs-1">
-                        <a asp-page="/Index" class="btn esh-basket-checkout text-white">[ Continue Shopping ]</a>
+                        <a asp-page="/Index" class="btn esh-basket-checkout text-white">[ Продовжити покупки ]</a>
                     </section>
                     <section class="esh-basket-item col-xs-push-7 col-xs-4">
 
                         <button class="btn esh-basket-checkout" name="updatebutton" value="" type="submit"
                                 asp-page-handler="Update">
-                            [ Update ]
+                            [ Оновити ]
                         </button>
-                        <a asp-page="./Checkout" class="btn esh-basket-checkout">[ Checkout ]</a>
+                        <a asp-page="./Checkout" class="btn esh-basket-checkout">[ Оплатити ]</a>
                     </section>
                 </div>
             </div>
