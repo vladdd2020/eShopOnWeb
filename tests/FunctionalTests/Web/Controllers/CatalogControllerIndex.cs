@@ -21,6 +21,7 @@ public class CatalogControllerIndex : IClassFixture<TestApplication>
         var response = await Client.GetAsync("/");
         response.EnsureSuccessStatusCode();
         var stringResponse = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(stringResponse);
 
         // Assert
         Assert.Contains("Зарядна станція Bluetti AC200MAX", stringResponse);
