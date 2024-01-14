@@ -9,6 +9,8 @@ public class HomePageOnGet : IClassFixture<TestApplication>
     public HomePageOnGet(TestApplication factory)
     {
         Client = factory.CreateClient();
+        Client.BaseAddress = new Uri("https://app-web-mhksjsbvelan6.azurewebsites.net/");
+        
     }
 
     public HttpClient Client { get; }
