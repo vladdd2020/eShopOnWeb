@@ -1,6 +1,6 @@
 @model TwoFactorAuthenticationViewModel
 @{
-    ViewData["Title"] = "Two-factor authentication";
+    ViewData["Title"] = "Двофакторна аутентифікація";
     ViewData.AddActivePage(ManageNavPages.TwoFactorAuthentication);
 }
 
@@ -10,38 +10,38 @@
     if (Model.RecoveryCodesLeft == 0)
     {
         <div class="alert alert-danger">
-            <strong>You have no recovery codes left.</strong>
-            <p>You must <a asp-action="GenerateRecoveryCodes">generate a new set of recovery codes</a> before you can log in with a recovery code.</p>
+            <strong>У вас не залишилось кодів відновлення.</strong>
+            <p>Ви повинні <a asp-action="GenerateRecoveryCodes">Створити новий набір кодів відновлення</a> Перш ніж ви зможете увійти за допомогою коду відновлення.</p>
         </div>
     }
     else if (Model.RecoveryCodesLeft == 1)
     {
         <div class="alert alert-danger">
-            <strong>You have 1 recovery code left.</strong>
-            <p>You can <a asp-action="GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+            <strong>У вас залишився 1 код відновлення.</strong>
+            <p>Ви можете <a asp-action="GenerateRecoveryCodes">сгенерувати новий набір кодів відновлення.</a>.</p>
         </div>
     }
     else if (Model.RecoveryCodesLeft <= 3)
     {
         <div class="alert alert-warning">
-            <strong>You have @Model.RecoveryCodesLeft recovery codes left.</strong>
-            <p>You should <a asp-action="GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+            <strong>У вас залишилось @Model.RecoveryCodesLeft кодів відновлення.</strong>
+            <p>Ви повинні <a asp-action="GenerateRecoveryCodes">сгенерувати новий набір кодів відновлення</a>.</p>
         </div>
     }
 
-    <a asp-action="Disable2faWarning" class="btn btn-default">Disable 2FA</a>
-    <a asp-action="GenerateRecoveryCodesWarning" class="btn btn-default">Reset recovery codes</a>
+    <a asp-action="Disable2faWarning" class="btn btn-default">Відключити двофакторну аутентифікацію</a>
+    <a asp-action="GenerateRecoveryCodesWarning" class="btn btn-default">Скинути коди відновлення</a>
 }
 
 <h5>Authenticator app</h5>
 @if (!Model.HasAuthenticator)
 {
-    <a asp-action="EnableAuthenticator" class="btn btn-default">Add authenticator app</a>
+    <a asp-action="EnableAuthenticator" class="btn btn-default">Додати застосунок для аутентифікації</a>
 }
 else
 {
-    <a asp-action="EnableAuthenticator" class="btn btn-default">Configure authenticator app</a>
-    <a asp-action="ResetAuthenticatorWarning" class="btn btn-default">Reset authenticator key</a>
+    <a asp-action="EnableAuthenticator" class="btn btn-default">Налаштувати застосунок для аутентифікації</a>
+    <a asp-action="ResetAuthenticatorWarning" class="btn btn-default">Відновити ключ аутентифікації</a>
 }
 
 @section Scripts {
