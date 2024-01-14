@@ -1,16 +1,16 @@
 ﻿@model EnableAuthenticatorViewModel
 @{
-    ViewData["Title"] = "Enable authenticator";
+    ViewData["Title"] = "Увімкнути аутентифікатор";
     ViewData.AddActivePage(ManageNavPages.TwoFactorAuthentication);
 }
 
 <h4>@ViewData["Title"]</h4>
 <div>
-    <p>To use an authenticator app go through the following steps:</p>
+    <p>Для використання додатку для аутентифікації виконайте наступні кроки:</p>
     <ol class="list">
         <li>
             <p>
-                Download a two-factor authenticator app like Microsoft Authenticator for
+                Завантажте додаток для двофакторної аутентифікації, наприклад, Microsoft Authenticator.
                 <a href="https://go.microsoft.com/fwlink/?Linkid=825071">Windows Phone</a>,
                 <a href="https://go.microsoft.com/fwlink/?Linkid=825072">Android</a> and
                 <a href="https://go.microsoft.com/fwlink/?Linkid=825073">iOS</a> or
@@ -20,25 +20,25 @@
             </p>
         </li>
         <li>
-            <p>Scan the QR Code or enter this key <kbd>@Model.SharedKey</kbd> into your two factor authenticator app. Spaces and casing do not matter.</p>
+            <p>Відскануйте QR-код або введіть цей ключ <kbd>@Model.SharedKey</kbd> у своєму додатку для двофакторної аутентифікації введіть цей ключ. Регістр та пробіли не мають значення.</p>
             <div class="alert alert-info">To enable QR code generation please read our <a href="https://go.microsoft.com/fwlink/?Linkid=852423">documentation</a>.</div>
             <div id="qrCode"></div>
             <div id="qrCodeData" data-url="@Model.AuthenticatorUri"></div>
         </li>
         <li>
             <p>
-                Once you have scanned the QR code or input the key above, your two factor authentication app will provide you
-                with a unique code. Enter the code in the confirmation box below.
+                Після того як ви відсканували QR-код або ввели ключ вище, ваш додаток для двофакторної аутентифікації надасть вам унікальний код. 
+                Введіть цей код у підтверджувальному полі нижче.
             </p>
             <div class="row">
                 <div class="col-md-6">
                     <form method="post">
                         <div class="form-group">
-                            <label asp-for="Code" class="control-label">Verification Code</label>
+                            <label asp-for="Code" class="control-label">Код підтвердження</label>
                             <input asp-for="Code" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Code" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-default">Verify</button>
+                        <button type="submit" class="btn btn-default">Підтвердити</button>
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     </form>
                 </div>
