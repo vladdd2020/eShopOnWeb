@@ -21,6 +21,8 @@ public class HomePageOnGet : IClassFixture<TestApplication>
         response.EnsureSuccessStatusCode();
         var stringResponse = await response.Content.ReadAsStringAsync();
         Console.WriteLine(stringResponse);
+        Console.WriteLine($"Request URL: {Client.BaseAddress}/");
+        Console.WriteLine($"HttpClient BaseAddress:{Client.BaseAddress}");
 
         // Assert
         Assert.Contains("Зарядна станція Bluetti AC200MAX", stringResponse);
