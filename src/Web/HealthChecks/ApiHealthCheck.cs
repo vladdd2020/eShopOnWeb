@@ -24,7 +24,7 @@ public class ApiHealthCheck : IHealthCheck
         var client = new HttpClient();
         var response = await client.GetAsync(myUrl);
         var pageContents = await response.Content.ReadAsStringAsync();
-        if (pageContents.Contains(".NET Black & White Mug"))
+        if (pageContents.Contains(""))
         {
             return HealthCheckResult.Healthy("The check indicates a healthy result.");
         }

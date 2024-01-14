@@ -37,16 +37,14 @@ public class TestApplication : WebApplicationFactory<IBasketViewModelService>
             {
                 // Replace SQLite with in-memory database for tests
                 return new DbContextOptionsBuilder<CatalogContext>()
-                .UseInMemoryDatabase("InMemoryDbForTesting")
-                .UseApplicationServiceProvider(sp)
+                .UseSqlServer("Server=tcp:sql-catalog-mhksjsbvelan6.database.windows.net,1433;Initial Catalog=catalogDatabaseTest;Persist Security Info=False;User ID=sqlAdmin;Password=Str0ngP@ss01~;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
                 .Options;
             });
             services.AddScoped(sp =>
             {
                 // Replace SQLite with in-memory database for tests
                 return new DbContextOptionsBuilder<AppIdentityDbContext>()
-                .UseInMemoryDatabase("Identity")
-                .UseApplicationServiceProvider(sp)
+                .UseSqlServer("Server=tcp:sql-identity-mhksjsbvelan6.database.windows.net,1433;Initial Catalog=identityDatabaseTest;Persist Security Info=False;User ID=sqlAdmin;Password=Str0ngP@ss01~;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
                 .Options;
             });
         });
