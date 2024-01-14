@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Generate two-factor authentication (2FA) recovery codes";
+    ViewData["Title"] = "Створити коди відновлення для двофакторної аутентифікації (2FA)";
     ViewData.AddActivePage(ManageNavPages.TwoFactorAuthentication);
 }
 
@@ -8,19 +8,19 @@
 <div class="alert alert-warning" role="alert">
     <p>
         <span class="glyphicon glyphicon-warning-sign"></span>
-        <strong>This action generates new recovery codes.</strong>
+        <strong>Ця дія генерує нові коди відновлення.</strong>
     </p>
     <p>
-        If you lose your device and don't have the recovery codes you will lose access to your account.
+        Якщо ви втратите свій пристрій і не маєте кодів відновлення, ви втратите доступ до свого облікового запису.
     </p>
     <p>
-        Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key
-        used in an authenticator app you should <a asp-action="ResetAuthenticatorWarning">reset your authenticator keys.</a>
+        Створення нових кодів відновлення не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви бажаєте змінити ключ, використований в додатку для аутентифікації, вам слід
+        <a asp-action="ResetAuthenticatorWarning">скинути ваші ключі аутентифікації.</a>
     </p>
 </div>
 
 <div>
     <form asp-action="GenerateRecoveryCodes" method="post" class="form-group">
-        <button class="btn btn-danger" type="submit">Generate Recovery Codes</button>
+        <button class="btn btn-danger" type="submit">Створити коди відновлення</button>
     </form>
 </div>
