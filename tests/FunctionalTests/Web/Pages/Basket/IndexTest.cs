@@ -93,6 +93,6 @@ public class IndexTest : IClassFixture<TestApplication>
         var stringUpdateResponse = await updateResponse.Content.ReadAsStringAsync();
 
         Assert.Contains("/basket/update", updateResponse!.RequestMessage!.RequestUri!.ToString()!);
-        Assert.Contains("Basket is empty", stringUpdateResponse);
+        Assert.Contains("Корзина порожня", stringUpdateResponse);
     }
 }
