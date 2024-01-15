@@ -4,7 +4,7 @@ namespace Microsoft.eShopWeb.Web.ViewModels;
 
 public class OrderViewModel
 {
-    private const string DEFAULT_STATUS = "Pending";
+    private const string DEFAULT_STATUS = "Очікує";
 
     public int OrderNumber { get; set; }
     public DateTimeOffset OrderDate { get; set; }
