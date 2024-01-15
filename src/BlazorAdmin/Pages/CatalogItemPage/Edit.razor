@@ -34,7 +34,7 @@
                                 <div class="col-md-@(HasPicture?"6":"12") ">
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-6">Name</label>
+                                        <label class="control-label col-md-6">Ім'я</label>
                                         <div class="col-md-12">
                                             <InputText class="form-control" @bind-Value="_item.Name" />
                                             <ValidationMessage For="(() => _item.Name)" />
@@ -42,7 +42,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-6">Description</label>
+                                        <label class="control-label col-md-6">Опис</label>
                                         <div class="col-md-12">
                                             <InputText class="form-control" @bind-Value="_item.Description" />
                                             <ValidationMessage For="(() => _item.Description)" />
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="control-label col-md-6">Brand</label>
+                                        <label class="control-label col-md-6">Бренд</label>
                                         <div class="col-md-12">
                                             <CustomInputSelect @bind-Value="_item.CatalogBrandId" class="form-control">
                                                 @foreach (var brand in Brands)
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-6">Type</label>
+                                        <label class="control-label col-md-6">Тип</label>
                                         <div class="col-md-12">
                                             <CustomInputSelect @bind-Value="_item.CatalogTypeId" class="form-control">
                                                 @foreach (var type in Types)
@@ -78,7 +78,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-6">Price</label>
+                                        <label class="control-label col-md-6">Ціна</label>
                                         <div class="col-md-12">
                                             <InputNumber @bind-Value="_item.Price" class="form-control" />
                                             <ValidationMessage For="(() => _item.Price)" />
@@ -90,9 +90,9 @@
                     }
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="Close">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="Close">Відмінити</button>
                     <button type="submit" class="btn btn-primary">
-                        Save
+                        Зберігти
                     </button>
                 </div>
             </EditForm>

@@ -9,9 +9,12 @@
 @if (showBanner)
 {
     <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        Use this space to summarize your privacy and cookie use policy. <a asp-area="" asp-controller="Home" asp-action="Privacy">Learn More</a>.
+        Ми дбаємо про вашу конфіденційність та використання файлів cookie. Наша політика полягає в зборі обмеженої кількості персональних даних лише для забезпечення найкращого користувацького досвіду.
+        Ми використовуємо файли cookie лише з метою поліпшення роботи нашого сайту та надання персоналізованої інформації.
+        Ви можете керувати налаштуваннями файлів cookie в своєму браузері. Детальну інформацію про нашу політику конфіденційності та використання файлів cookie ви можете знайти на нашому веб-сайті. 
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Вивчити Ще</a>.
         <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
-            <span aria-hidden="true">Accept</span>
+            <span aria-hidden="true">Прийняти</span>
         </button>
     </div>
     <script>
