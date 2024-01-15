@@ -1,32 +1,32 @@
 ﻿@model OrderDetailViewModel
 @{
-    ViewData["Title"] = "My Order History";
+    ViewData["Title"] = "Історія замовленнь";
 }
 @{
-    ViewData["Title"] = "Order Detail";
+    ViewData["Title"] = "Деталі замовлення";
 }
 
 <div class="esh-orders-detail">
     <div class="container">
         <section class="esh-orders-detail-section">
             <article class="esh-orders-detail-titles row">
-                <section class="esh-orders-detail-title col-xs-3">Order number</section>
-                <section class="esh-orders-detail-title col-xs-3">Date</section>
-                <section class="esh-orders-detail-title col-xs-2">Total</section>
-                <section class="esh-orders-detail-title col-xs-3">Status</section>
+                <section class="esh-orders-detail-title col-xs-3">Номер замовлення</section>
+                <section class="esh-orders-detail-title col-xs-3">Дата</section>
+                <section class="esh-orders-detail-title col-xs-2">Усього</section>
+                <section class="esh-orders-detail-title col-xs-3">Статус</section>
             </article>
 
             <article class="esh-orders-detail-items row">
                 <section class="esh-orders-detail-item col-xs-3">@Model.OrderNumber</section>
                 <section class="esh-orders-detail-item col-xs-3">@Model.OrderDate</section>
-                <section class="esh-orders-detail-item col-xs-2">$@Model.Total.ToString("N2")</section>
+                <section class="esh-orders-detail-item col-xs-2">₴@Model.Total.ToString("N2")</section>
                 <section class="esh-orders-detail-item col-xs-3">@Model.Status</section>
             </article>
         </section>
 
         <section class="esh-orders-detail-section">
             <article class="esh-orders-detail-titles row">
-                <section class="esh-orders-detail-title col-xs-12">Shipping Address</section>
+                <section class="esh-orders-detail-title col-xs-12">Адреса доставки</section>
             </article>
 
             <article class="esh-orders-detail-items row">
@@ -44,7 +44,7 @@
 
         <section class="esh-orders-detail-section">
             <article class="esh-orders-detail-titles row">
-                <section class="esh-orders-detail-title col-xs-12">ORDER DETAILS</section>
+                <section class="esh-orders-detail-title col-xs-12">Деталі замовлення</section>
             </article>
 
             @for (int i = 0; i < Model.OrderItems.Count; i++)
@@ -55,9 +55,9 @@
                         <img class="esh-orders-detail-image" src="@item.PictureUrl">
                     </section>
                     <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-3">@item.ProductName</section>
-                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-1">$ @item.UnitPrice.ToString("N2")</section>
+                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-1">₴ @item.UnitPrice.ToString("N2")</section>
                     <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-1">@item.Units</section>
-                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-2">$ @Math.Round(item.Units * item.UnitPrice, 2).ToString("N2")</section>
+                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-2">₴ @Math.Round(item.Units * item.UnitPrice, 2).ToString("N2")</section>
                 </article>
             }
         </section>
@@ -70,7 +70,7 @@
 
             <article class="esh-orders-detail-items row">
                 <section class="esh-orders-detail-item col-xs-9"></section>
-                <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">$ @Model.Total.ToString("N2")</section>
+                <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">₴ @Model.Total.ToString("N2")</section>
             </article>
         </section>
     </div>
